@@ -21,15 +21,15 @@ This project is a Java-based automation framework utilizing Cucumber, Selenium, 
 - **pom.xml**: Maven configuration file specifying project dependencies and build settings.
 
 ## Running the Project
-### Via TestRunner
+### Via Cucumber Tag
 1. Navigate to the project root directory in your terminal.
 2. Execute the following command:
 
 ```bash
-mvn clean test
+mvn clean test -Dcucumber.filter.tags="@TagName"
 ```
 
-This command will trigger the TestNG test execution using the configured TestRunner.
+This command will trigger the test execution using the configured TestRunner.
 
 ### Via Maven Commands
 1. Navigate to the project root directory in your terminal.
