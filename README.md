@@ -20,6 +20,10 @@ This project is a Java-based automation framework utilizing Cucumber, Selenium, 
 - **ExtentReports**: html,spark,pdf reports will be generated under this folder
 - **pom.xml**: Maven configuration file specifying project dependencies and build settings.
 
+## Assignment Features
+- **UI Assignment**: This assignment is covered in the feature file with the global tag `@UI_Assignment`.
+- **API Assignment**: This assignment is covered in the feature file with the global tag `@API_Assignment`.
+
 ## Running the Project
 ### Via Cucumber Tag
 1. Navigate to the project root directory in your terminal.
