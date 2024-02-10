@@ -33,7 +33,7 @@ This project is a Java-based automation framework utilizing Cucumber, Selenium, 
 mvn clean test -Dcucumber.filter.tags="@TagName"
 ```
 
-This command will trigger the test execution using the configured TestRunner.
+This command will trigger the test execution using the cucumber tag.
 
 ### Via Maven Commands
 1. Navigate to the project root directory in your terminal.
