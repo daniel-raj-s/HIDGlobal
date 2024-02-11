@@ -1,5 +1,5 @@
 # Base image with Maven and JDK 11
-FROM maven:3.9.6-openjdk-11
+FROM maven:latest-openjdk-11
 
 # Update and install essential tools
 RUN apt-get update -qqy && apt-get install -qqy unzip gpg
