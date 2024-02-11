@@ -17,11 +17,11 @@ jobs:
       - name: Login to DockerHub
         uses: docker/login-action@v2
         with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          username: danielrajs
+          password: dckr_pat_NLBthyHY_8At_C8T5SM9b-BE5GI
           
       - name: Build and push
-        uses: docker/build-push-action@3
+        uses: docker/build-push-action@v3
         with:
           context: ./jdk-11
           tags: markhobson/maven-chrome:jdk-11
