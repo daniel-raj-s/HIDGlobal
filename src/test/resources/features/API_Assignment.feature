@@ -1,4 +1,4 @@
-@API_Assignment
+@API_Assignment @HID_Global
 Feature: API Assignment
 
   Scenario: Perform API Assignment

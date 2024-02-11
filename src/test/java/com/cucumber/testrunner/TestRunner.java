@@ -7,7 +7,7 @@ import io.cucumber.testng.CucumberOptions;
 		"summary", "html:BDD_Report/cucumber.html",
 		"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:" }, monochrome = true, publish = true
 
-		, tags = "@UI_Assignment")
+		, tags = "@HID_Global")
 
 public class TestRunner extends AbstractTestNGCucumberTests {
 

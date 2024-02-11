@@ -1,4 +1,4 @@
-@UI_Assignment
+@UI_Assignment @HID_Global
 Feature: Assignment1
 
   Background: 

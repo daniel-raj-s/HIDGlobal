@@ -55,11 +55,11 @@ public class CommonUtils {
 		}
 	}
 
-	public void writeTextToFile(FileWriter writer, String text) {
+	public static void writeTextToFile(FileWriter writer, String text) {
 		// Write each line to a file
 		try {
 			writer.write(text + "\n");
-			System.out.println("Text has been written to text_file.txt");
+			System.out.println("Text has been written to the file");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
