@@ -3,7 +3,7 @@ package com.cucumber.pages;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
-
+import java.io.File;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -54,7 +54,7 @@ public class DocsPage extends CommonUtils{
 	
 	public void storeSubmenusInTextFile(String URL, String sectionName) {
 		 try {
-			writer = new FileWriter(path +"\\"+sectionName+" Sub Menu"+".txt",false);
+			writer = new FileWriter(path +File.separator+sectionName+" Sub Menu"+".txt",false);
 			
 			By lst_element = By.xpath("//div[text()='"+sectionName+"']/../following-sibling::ul/li/a");
 			

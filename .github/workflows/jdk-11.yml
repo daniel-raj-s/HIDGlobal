@@ -4,17 +4,37 @@ on:
   push:
     branches:
       - main
-      
+
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v2
+        with:
+          distribution: 'temurin' # See 'Supported distributions' for available options
+          java-version: '17'
+      - run: java -version  
+      - name: Install Chrome
+        uses: browser-actions/setup-chrome@latest
 
-      - name: Build Docker image
-        run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/myimage:latest .
-
-      - name: Log in to Docker Hub
-        run: echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
+      - name: Build and test with Maven
+        run: |
+          sed -i 's/--start-maximized/--headless/g' ./src/test/java/com/cucumber/utils/WebDriverSingleton.java
+          mvn clean test
+          ls
+      
+      - name: Upload artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-reports
+          path: |
+            ${{ github.workspace }}/target/surefire-reports  # Adjust the path as needed
+            ${{ github.workspace }}/ExtentReports
+            ${{ github.workspace }}/BDD_Report
+            ${{ github.workspace }}/Advanced Guides Sub Menu.txt
+            ${{ github.workspace }}/Main Concepts Sub Menu.txt
+            ${{ github.workspace }}/food Details_From_API.txt
+            ${{ github.workspace }}/category Details_From_API.txt

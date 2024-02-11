@@ -3,7 +3,7 @@ package com.cucumber.stepdefinition;
 import io.cucumber.java.en.*;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
-
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashMap;
@@ -12,7 +12,6 @@ import java.util.Map.Entry;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
 import com.cucumber.utils.CommonUtils;
@@ -46,7 +45,7 @@ public class API_StepDefinition {
 			String category = venue.getString("category");
 			categoryCount.put(category, categoryCount.getOrDefault(category, 0) + 1);
 		}
-		CommonUtils.writer = new FileWriter(CommonUtils.path + "\\" + "category" + " Details_From_API" + ".txt", false);
+		CommonUtils.writer = new FileWriter(CommonUtils.path + File.separator + "category" + " Details_From_API" + ".txt", false);
 		for (Entry<String, Integer> entry : categoryCount.entrySet()) {
 			System.out.println(entry.getKey() + " = " + entry.getValue());
 			CommonUtils.writeTextToFile(CommonUtils.writer, entry.getKey() + " = " + entry.getValue());
@@ -59,9 +58,9 @@ public class API_StepDefinition {
 		Assert.assertEquals("food", categoryName);
 		JSONArray venuesArray = new JSONObject(response.getBody().asString()).getJSONArray("venues");
 		System.out.println();
-		CommonUtils.writer = new FileWriter(CommonUtils.path + "\\" + categoryName + " Details_From_API" + ".txt",
+		CommonUtils.writer = new FileWriter(CommonUtils.path + File.separator + categoryName + " Details_From_API" + ".txt",
 				false);
-
+		
 		for (int i = 0; i < venuesArray.length(); i++) {
 			JSONObject venue = venuesArray.getJSONObject(i);
 			if (venue.getString("category").equals(categoryName)) {
