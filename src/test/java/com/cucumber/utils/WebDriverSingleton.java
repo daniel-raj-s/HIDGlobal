@@ -16,7 +16,7 @@ public class WebDriverSingleton {
     public static WebDriver getDriver() {
         if (driver == null) {
         	ChromeOptions option = new ChromeOptions();
-    		option.addArguments("--start-maximized");
+            option.addArguments("--headless");
     		driver = new ChromeDriver(option);
     		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(TIMEOUT));
         }
