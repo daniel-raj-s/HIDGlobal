@@ -51,10 +51,10 @@ This project leverages GitHub Actions to automate the CI/CD workflow. Pushing yo
 	See the .github/workflows directory for the configured workflow files.
 
 ## Folder Structure:
-**features:** Cucumber feature files
-**src/main/test:** Test step definitions and helper classes
-**src/test/resources:** feature files and additional resources
-**.github/workflows:** GitHub Actions workflow files
+    features: Cucumber feature files
+    src/main/test: Test step definitions and helper classes
+    src/test/resources: feature files and additional resources
+    .github/workflows: GitHub Actions workflow files
 
 ## Assignment Features
 - **UI Assignment**: This assignment is covered in the feature file with the global tag `@UI_Assignment`.
