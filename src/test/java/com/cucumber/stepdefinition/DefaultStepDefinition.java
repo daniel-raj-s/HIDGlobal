@@ -52,7 +52,7 @@ public class DefaultStepDefinition {
 		DocsPage.expandSection(sectionName);
 	}
 
-	@And("Hightlight all sub element under {string}")
+	@And("Highlight all sub element under {string}")
 	public void user_highlights_submenu_on_section_name(String sectionName) {
 		DocsPage.highLightSubElement(sectionName);
 	}

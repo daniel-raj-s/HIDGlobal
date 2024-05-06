@@ -8,7 +8,7 @@ Feature: Assignment1
   Scenario Outline: Highlight Subelements and Links
     Given User clicks on Docs tab
     And Expand "<sectionName>" section
-    Then Hightlight all sub element under "<sectionName>"
+    Then Highlight all sub element under "<sectionName>"
     And Store sub elements of "<sectionName>" text and links into file
     
     Examples: 

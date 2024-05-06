@@ -1,5 +1,3 @@
-# HIDGlobal
-
 # Cucumber Selenium Project
 
 ## Overview

@@ -19,18 +19,14 @@ import com.cucumber.utils.CommonUtils;
 public class API_StepDefinition {
 
 	private Response response;
-	private Map<String, Integer> categoryCount;
 
-	@Given("User navigates to the Coinmap API")
+    @Given("User navigates to the Coinmap API")
 	public void userNavigatesToTheCoinmapAPI() {
 
 		response = RestAssured.get("https://coinmap.org/api/v1/venues/");
 
-		if (response.getStatusCode() == 200) {
-			Assert.assertTrue(true);
-		} else {
-			Assert.assertTrue(false);
-		}
+        Assert.assertEquals(response.getStatusCode(), 200);
+
 
 	}
 
@@ -39,7 +35,7 @@ public class API_StepDefinition {
 		Assert.assertEquals(200, response.getStatusCode());
 		JSONObject jsonResponse = new JSONObject(response.getBody().asString());
 		JSONArray venuesArray = jsonResponse.getJSONArray("venues");
-		categoryCount = new HashMap<>();
+        Map<String, Integer> categoryCount = new HashMap<>();
 		for (int i = 0; i < venuesArray.length(); i++) {
 			JSONObject venue = venuesArray.getJSONObject(i);
 			String category = venue.getString("category");
