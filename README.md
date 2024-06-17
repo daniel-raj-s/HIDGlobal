@@ -16,7 +16,7 @@ This project utilizes Cucumber for BDD-style test specifications and Selenium We
 ## Getting Started:
 Clone the repository:
 ```bash
-git clone https://github.com/daniel-raj-s/HIDGlobal.git
+git clone https://github.com/daniel-raj-s/java-cucumber-framework.git
 ```
 ## Install dependencies:
 
